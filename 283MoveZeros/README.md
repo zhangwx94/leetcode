@@ -9,7 +9,7 @@ Note:
 2. Minimize the total number of operations.
 
 
-Follow up
+Follow up:
 
 Segregate 0s and 1s in an array
 
@@ -34,3 +34,7 @@ a) Keep incrementing index left while there are 0s at it
 b) Keep decrementing index right while there are 1s at it
 c) If left < right then exchange arr[left] and arr[right]
 
+More general:
+
+Input array   =  [0, 1, 0, 1, 2, 3, 1, 1, 1, 0] 
+Output array =  [0, 0, 0, 2, 3, 1, 1, 1, 1, 1] 
