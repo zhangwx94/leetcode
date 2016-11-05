@@ -5,10 +5,6 @@ Given binary tree [1,null,2,3],
 
 return [1,3,2].
 
-UseStack.java 
+1. UseStack.java O(n) time and O(n) space.
 
-O(n) time and O(n) space.
-
-MorrisTraversal.java
-
-O(n) time and O(1) space
+2. MorrisTraversal.java O(n) time and O(1) space
