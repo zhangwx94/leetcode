@@ -1,18 +1,27 @@
 public int[][] multiply(int[][] A, int[][] B) {
-        int col = A[0].length; // A.col == B.row
-        int m = A.length, n = B[0].length; // m: A.row, n: B.col
-        int[][] res = new int[m][n];
-        // i: A row
-        // j: A col, B row
-        // k: B col
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < col; j++) {
-                if (A[i][j] != 0) {
-                    for (int k = 0; k < n; k++) {
-                        if (B[j][k] != 0) res[i][k] += A[i][j] * B[j][k];
-                    }
+        if(A.length == 0 || A[0].length == 0 || B.length == 0 || B[0].length == 0) 
+                return new int[][]{};
+        int m = A.length, n = B.length; l = B[0].length;
+        int[][] res = new int[m][l];
+        
+        Map<Integer, Map<Integer, Integer>> map = new HashMap();
+        for(int i = 0; i < m; i++){
+                Map<Integer, Integer> temp = new HashMap();
+                for(int j = 0, j < n; j++){
+                        if(A[i][j] != 0)
+                                temp.put(j, A[i][j]);
                 }
-            }
+                map.put(i, temp);
         }
-        return res;
-    }
+        
+        for(int key1: map.keySet()){
+                for(int i = 0; i < l; i++){
+                        for(int key2: map.get(key1).keySet()){
+                                res[key1][i] += map.get(key1).get(key2) * B[key2][i];
+                        }
+                }
+        }
+        return res
+}
+
+                        
